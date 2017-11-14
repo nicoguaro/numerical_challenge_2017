@@ -1,3 +1,11 @@
+### Julia ###
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl
+
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -8,7 +16,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -79,13 +86,14 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# dotenv
+# Environments
 .env
-
-# virtualenv
 .venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -99,3 +107,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+
