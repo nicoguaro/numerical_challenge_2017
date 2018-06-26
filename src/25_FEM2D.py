@@ -2,6 +2,7 @@ from __future__ import division, print_function
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def assem(coords, elems, source):
     ncoords = coords.shape[0]
     stiff = np.zeros((ncoords, ncoords))
@@ -45,7 +46,8 @@ free = range(6)
 sol = np.linalg.solve(stiff[np.ix_(free, free)], rhs[free])
 sol_c = np.zeros(coords.shape[0])
 sol_c[free] = sol
-plt.tricontourf(coords[:, 0], coords[:, 1], sol_c, cmap="hot")
+plt.tricontourf(coords[:, 0], coords[:, 1], sol_c, cmap="hot",
+                levels=np.linspace(-48, 0, 10))
 plt.colorbar()
 plt.axis("image")
 plt.savefig("FEM2D.svg")

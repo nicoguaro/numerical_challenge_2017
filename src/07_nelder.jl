@@ -11,7 +11,7 @@ function nelder_mead_step(fun, verts; alpha=1, gamma=2, rho=0.5,
     # 3. Reflection
     xr = xo + alpha*(xo - verts[end, :]')
     fr = fun(xr)
-    if f[1]<=fr && fr<f[2]
+    if f[1]<=fr && fr<f[end - 1]
         new_verts = [verts[1:end-1, :]; xr]
     # 4. Expansion
     elseif fr<f[1]

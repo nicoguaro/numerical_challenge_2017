@@ -17,7 +17,7 @@ def nelder_mead_step(fun, verts, alpha=1, gamma=2, rho=0.5,
     # 3. Reflection
     xr = xo + alpha*(xo - verts[-1, :])
     fr = fun(xr)
-    if f[0]<=fr and fr<f[1]:
+    if f[0]<=fr and fr<f[-2]:
         new_verts = np.vstack((verts[:-1, :], xr))
     # 4. Expansion
     elif fr<f[0]:
